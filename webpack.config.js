@@ -1,4 +1,4 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -9,6 +9,7 @@ module.exports = {
             template: 'index.html'
         })
     ],
+    module: {},
     optimization: {
         runtimeChunk: 'single',
         splitChunks: {
