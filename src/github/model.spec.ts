@@ -1,5 +1,5 @@
+import {GitHubUser} from './model'
 const assert = require('assert');
-const {GitHubUser} = require("./model"); // assert from Node
 
 describe('GitHubUser', () => {
     it('should create with img and bio props', () => {
@@ -17,8 +17,8 @@ describe('GitHubUser', () => {
         const result = new GitHubUser(input);
 
         // then
-        assert.equal(result.img, givenUrl);
-        assert.equal(result.bio, givenBio);
+        assert.strictEqual(result.img, givenUrl);
+        assert.strictEqual(result.bio, givenBio);
     })
 
     it('should return bio from toString implementation', () => {
@@ -36,6 +36,6 @@ describe('GitHubUser', () => {
         const result = new GitHubUser(input);
 
         // then
-        assert.equal(`${result}`, givenBio);
+        assert.strictEqual(`${result}`, givenBio);
     })
 });
