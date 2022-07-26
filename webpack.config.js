@@ -3,13 +3,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'production',
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx']
+    },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: 'index.html'
         })
     ],
-    module: {},
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: 'awesome-typescript-loader'
+            }
+        ]
+    },
     optimization: {
         runtimeChunk: 'single',
         splitChunks: {
