@@ -1,13 +1,13 @@
 export interface IGithubResponse {
-    avatar_url?: string;
-    bio?: string;
+    avatar_url: string;
+    bio: string;
 }
 
 export class GitHubUser{
     public img: string;
     public bio: string;
 
-    constructor({avatar_url: img = '', bio = 'Cannot get a biography.'}: IGithubResponse = {}) {
+    constructor({avatar_url: img = '', bio = 'Cannot get a biography.'}: Partial<IGithubResponse> = {}) {
         [this.img, this.bio] = [img, bio];
     }
 
