@@ -1,9 +1,9 @@
 import {getUser} from "../github/service";
 
-const ME_ATTR = 'me';
+const ME_ATTR: string = 'me';
 
 export class AboutMe extends HTMLElement {
-    static get observedAttributes() {
+    static get observedAttributes(): string[] {
         return [ME_ATTR];
     }
 
@@ -11,13 +11,13 @@ export class AboutMe extends HTMLElement {
         super();
     }
 
-    attributeChangedCallback(name, oldValue, newValue) {
+    attributeChangedCallback(name: string, oldValue: any, newValue: any): void {
         if (name === ME_ATTR && oldValue !== newValue) {
             this.render(newValue);
         }
     }
 
-    async render(me) {
+    async render(me: string): Promise<void> {
         const user = await getUser(me);
         this.innerHTML = `
         <img src="${user.img}" alt="">
