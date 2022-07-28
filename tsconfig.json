@@ -4,7 +4,9 @@
     "target": "ESNext",
     "alwaysStrict": false,
     "moduleResolution": "node",
-    "declaration": true
+    "declaration": true,
+    "jsx": "react",
+    "skipLibCheck": false
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
